@@ -43,7 +43,7 @@
 
 ;;; Code:
 
-(require 'doc-view)
+(require 'pdf-view)
 (require 'cl-lib)
 
 (defvar latex-preview-pane-current-version "20151021")
@@ -75,7 +75,7 @@
 
 ;;
 ;; Init procedure:
-;; 1) Find a window with doc-view-mode turned on in this frame.
+;; 1) Find a window with pdf-view-mode turned on in this frame.
 ;; 2) If no such window can be found, split this window vertically. 
 ;; 2a) Display startup message, shortcuts, etc. Pause for 3 seconds.  
 ;; 3) TeX the current file. (that is, start the refresh loop)
@@ -307,8 +307,9 @@
           (progn
             (set-window-buffer (lpp/window-containing-preview) pdf-buff-name) 
             (switch-to-buffer pdf-buff-name)
-            (doc-view-revert-buffer nil t)
-            (switch-to-buffer tex-buff) 
+            (pdf-view-revert-buffer nil t)
+	    (pdf-view-midnight-minor-mode t)
+            (switch-to-buffer tex-buff)
             ))
       ))))
 
