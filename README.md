@@ -1,4 +1,4 @@
-# LaTeX Preview Pane
+# PDFView LaTeX Preview Pane
 
 
 latex-preview-pane is a minor mode for Emacs that enables you to preview your LaTeX files directly in Emacs. 
